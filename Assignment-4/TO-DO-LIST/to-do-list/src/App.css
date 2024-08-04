@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+}
+body,
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+nav,
+.form-container,
+.container {
+  position: relative;
+}
+
+nav {
+  position: relative;
+  left: 2rem;
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+nav h1 {
+  font-family: "Orbitron", sans-serif !important;
+  margin: 0rem 5rem;
+  font-size: 60px;
+  color: rgb(212, 7, 7);
+}
+
+nav img {
+  height: 150px;
+  width: auto;
+  border-radius: 100px;
+}
+
+@media (max-width: 760px) {
+  nav img {
+    height: rem;
+  }
+  nav h1 {
+    font-size: 2rem;
+    margin: 0rem 1rem;
+  }
+}
+
+#search-icon {
+  height: 2rem;
+  width: auto;
+}
+
+.form-item {
+  margin: 0rem 1rem;
+}
+
+#search-form {
+  display: flex;
+  align-items: center;
+  padding: 3rem 2rem;
+  justify-content: flex-start;
+}
+
+#searchbar {
+  padding: 0.5rem 4rem;
+  border: 2px rgb(212, 7, 7) solid;
+  border-radius: 3px;
+  background-color: floralwhite;
+}
+
+#add-task-bar {
+  padding: 0.5rem 4rem;
+  border: 2px rgb(212, 7, 7) solid;
+  border-radius: 3px;
+  background-color: floralwhite;
+}
+
+#add-task-btn,
+tr .task-del-btn,
+tr .task-update-btn {
+  background-color: rgb(212, 7, 7);
+  color: floralwhite;
+  border: black 2px solid;
+  padding: 0.5rem 1rem;
+  margin: 0rem 1rem;
+  border-radius: 4px;
+}
+
+.task-del-btn,
+.task-update-btn,
+#add-task-btn:hover {
+  cursor: pointer;
+}
+
+.container table {
+  width: 50%;
+  position: absolute;
+  box-sizing: border-box;
+  margin: 3rem 2rem;
+}
+
+.container table,
+th,
+td,
+tr {
+  border: 2px solid rgb(212, 7, 7);
+  border-collapse: collapse;
+  vertical-align: center;
+  text-align: left;
+  padding: 1rem 1.5rem;
+}
+
+.container table th {
+  font-size: 1.5rem;
+}
+
+.Task-Wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Task-Btns-Wrapper {
+  display: flex;
+  justify-content: space-between;
+}
