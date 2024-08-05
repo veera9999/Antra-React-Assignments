@@ -21,6 +21,8 @@ How do you ensure your code is maintainable and scalable? -->
 
 ![image](https://github.com/user-attachments/assets/5d90ee9b-941e-45eb-838a-572e335c2838)
 
+# Interview Questions:
+
 ## How do you decide when to split a component into subcomponents?
 
 It is general practice to split a component into subcomponents when it becomes too large, complex, or contains logically distinct parts that can be reused or tested independently. This makes the code readable, well structured and easy to debug.
