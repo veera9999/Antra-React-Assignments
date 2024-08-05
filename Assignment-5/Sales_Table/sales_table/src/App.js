@@ -4,8 +4,10 @@ import SalesTableWithFilter from "../src/components/TableWithFilter";
 function App() {
   return (
     <div className="App">
-      <SalesTable />
-      <SalesTableWithFilter />
+      <div className="App-Container">
+        <SalesTable />
+        <SalesTableWithFilter />
+      </div>
     </div>
   );
 }
