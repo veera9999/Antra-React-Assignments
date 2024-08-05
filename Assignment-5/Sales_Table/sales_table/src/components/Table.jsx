@@ -26,32 +26,37 @@ export default function SalesTable() {
       return [];
     }
 
-    const summaryMap = sales.reduce((acc, sale) => {
-      if (!acc[sale.region]) {
-        acc[sale.region] = {
+    const summaryMap = {};
+    const salesWithSummary = [];
+
+    sales.forEach((sale) => {
+      if (!summaryMap[sale.region]) {
+        summaryMap[sale.region] = {
           region: sale.region,
           model: "SUM",
           sales: 0,
           isSummary: true,
         };
       }
-      acc[sale.region].sales += sale.sales;
-      return acc;
-    }, {});
+      summaryMap[sale.region].sales += sale.sales;
 
-    const summaryRows = Object.values(summaryMap);
-    const salesWithSummary = sales.reduce((acc, sale) => {
-      if (!acc.length || acc[acc.length - 1].region !== sale.region) {
-        const summaryRow = summaryRows.find(
-          (summary) => summary.region === sale.region
-        );
-        acc.push(summaryRow);
+      // Add the sale to the salesWithSummary array
+      salesWithSummary.push({ ...sale, isSummary: false });
+    });
+
+    // Add summary rows after each region's sales
+    const result = [];
+    let currentRegion = null;
+
+    salesWithSummary.forEach((sale) => {
+      if (currentRegion !== sale.region) {
+        currentRegion = sale.region;
+        result.push(summaryMap[currentRegion]);
       }
-      acc.push({ ...sale, isSummary: false });
-      return acc;
-    }, []);
+      result.push(sale);
+    });
 
-    return salesWithSummary;
+    return result;
   };
 
   return (

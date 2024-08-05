@@ -77,7 +77,7 @@ export default function SalesTableWithFilter() {
         </thead>
         <tbody>
           {filteredSales.map((sale) => (
-            <tr key={sale.id}>
+            <tr key={sale.region + sale.model}>
               <td>{sale.region}</td>
               <td>{sale.model}</td>
               <td>{sale.sales}</td>
