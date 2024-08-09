@@ -6,7 +6,7 @@ What is redux thunk and why do you want to use it? -->
 
 ![Antra-logo](https://github.com/user-attachments/assets/9db2d170-9512-4225-b245-e2a71c13f171)
 
-# Assignment - 5
+# Assignment - 6
 
 ===========================================================================
 
