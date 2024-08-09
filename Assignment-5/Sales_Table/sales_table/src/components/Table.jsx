@@ -40,11 +40,9 @@ export default function SalesTable() {
       }
       summaryMap[sale.region].sales += sale.sales;
 
-      // Add the sale to the salesWithSummary array
       salesWithSummary.push({ ...sale, isSummary: false });
     });
 
-    // Add summary rows after each region's sales
     const result = [];
     let currentRegion = null;
 

@@ -39,7 +39,7 @@ Props are read-only attributes and immutable within the component that are passe
 ## How to trigger rerender in a component?
 
 ```
- Updating the state using setState (in class components) or useState (in functional components) triggers a re-render.
+ Updating the state using setState (in class components) or useState (in functional components) triggers a re-render. If we update the parent component, it also triggers rerender of child component. We can use Pure Components or React.memo to prevent unnecessary rerender of child components.
 ```
 
 ## Why do you like react over other front-end libraries and frameworks?
@@ -94,5 +94,27 @@ React then compares the Virtual DOM with the real DOM (diffing) and applies only
 ## Can you explain the useMemo and useCallback hooks and provide examples of when you might use them?
 
 ```
+useMemo and useCallback are both React hooks used for optimization, but they serve slightly different purposes:
+useMemo:
+Purpose: Memoizes the result of a computation.
+Use case: When you have expensive calculations that don't need to be re-run on every render.
+When to use:
+Complex calculations in render
+Preventing unnecessary re-renders of child components that depend on objects or arrays
 
+useCallback:
+Purpose: Memoizes a function definition.
+Use case: When you want to prevent a function from being recreated on every render.
+When to use:
+Passing callbacks to optimized child components that rely on reference equality to prevent unnecessary renders
+When the function is a dependency for other hooks
+
+Key Differences:
+useMemo returns a memoized value; useCallback returns a memoized function.
+useMemo is used for expensive computations; useCallback is used for preserving function references.
 ```
+
+## Explain the concept of Higher-Order Components (HOCs) and provide an example use case.
+
+Higher-Order Components (HOCs):
+A function that takes a component and returns a new component, enhancing the original component with additional props or behavior.
